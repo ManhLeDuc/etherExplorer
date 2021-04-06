@@ -11,8 +11,16 @@ router
     .get(ctrlBlock.getBlock);
 
 router
-    .route('/contract/:transactionId')
+    .route('/contract/:contractId')
     .get(ctrlContract.getContract);
+
+router
+    .route('/contract/:contractId/code')
+    .get(ctrlContract.getCode);
+
+router
+    .route('/contract/:contractId/storage/:storageIndex')
+    .get(ctrlContract.getStorage)
 
 router
     .route('/address/:addressId')
